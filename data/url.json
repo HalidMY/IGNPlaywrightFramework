@@ -1,0 +1,7 @@
+{
+    "prod":{
+        "ign_uk":{
+            "baseUrl": "https://www.ign.com/uk"
+        }
+    }
+}
