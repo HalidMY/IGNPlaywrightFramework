@@ -1,15 +1,16 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
 import HomePage from "../../pages/homePage";
 import { prod } from "../../data/url.json";
-import { default as CONSTANTS } from "../../utils/constans";
+import Constans from "../../utils/constans";
+import UiUtils from "../../utils/uiUtils";
 
 test.describe("Login functionality using Gmail", () => {
   test("Test that user is able to login", async ({ page }) => {
     const homePage = new HomePage(page);
 
     // Navigate to IGN website
-    await page.goto(prod.ign_uk.baseUrl);
-    expect(page.url()).toContain("ign.com");
+    await UiUtils.goToUrl(homePage.page, prod.ign_uk.baseUrl);
+    await UiUtils.validatePageUrlContains(homePage.page, Constans.HOMEPAGE_URL);
 
     // Accept cookies
     await homePage.clickOnAcceptCookies();
@@ -17,6 +18,7 @@ test.describe("Login functionality using Gmail", () => {
     // Login IGN
     await homePage.clickOnLoginButton();
     await homePage.clickOnGoogleButton();
-    await homePage.enterCredentials(CONSTANTS.IGN_LOGIN.EMAIL);
+    await homePage.enterCredentials(Constans.IGN_LOGIN_EMAIL, Constans.IGN_LOGIN_PASSWORD);
+    await UiUtils.validatePageUrlContains(homePage.page, Constans.HOMEPAGE_URL);
   });
 });

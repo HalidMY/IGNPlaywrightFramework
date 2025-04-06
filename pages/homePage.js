@@ -6,6 +6,9 @@ class HomePage {
     this.googleButton = page.locator('[data-cy="google"]');
     this.emailInput = page.locator("#identifierId");
     this.searchButton = page.locator('button[title="Search"]');
+    this.nextButton = page.locator("#identifierNext");
+    this.passwordInput = page.locator('input[type="password"]');
+    this.passwordNextButton = page.locator("#passwordNext");
   }
 
   // Actions performed on the Home page
@@ -25,10 +28,12 @@ class HomePage {
     await this.googleButton.click();
   }
 
-  async enterCredentials(email) {
+  async enterCredentials(email, password) {
     console.log(`Enter email: ${email}`);
     await this.emailInput.fill(email);
-    await this.page.keyboard.press("Enter");
+    await this.nextButton.click();
+    await this.passwordInput.fill(password);
+    await this.passwordNextButton.click();
   }
 
   async clickSearchButton() {
