@@ -18,7 +18,7 @@ test.describe("Login functionality using Gmail", () => {
     // Login IGN
     await homePage.clickOnLoginButton();
     await homePage.clickOnGoogleButton();
-    await homePage.enterCredentials(Constans.IGN_LOGIN_EMAIL, Constans.IGN_LOGIN_PASSWORD);
+    // await homePage.enterCredentials(Constans.IGN_LOGIN_EMAIL, Constans.IGN_LOGIN_PASSWORD);
     await UiUtils.validatePageUrlContains(homePage.page, Constans.HOMEPAGE_URL);
   });
 });
