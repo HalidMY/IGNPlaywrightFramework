@@ -17,5 +17,8 @@ class Strings {
     static ASSASSINS_CREED_ROGUE = new Strings ({default: 'Assassin’s Creed Rogue', pageTitle: "Assassin’s Creed Rogue"});
     static ASSASSINS_CREED_BLACK_FLAG = new Strings ({default: 'Assassin\'s Creed 4', pageTitle: "Assassin's Creed IV: Black Flag"});
     static ASSASSINS_CREED_THIRD = new Strings ({default: 'Assassin\'s Creed III', pageTitle: "Assassin's Creed III"});
+
+    // Movies
+    static DARK_KNIGHT = new Strings ({default: 'Dark Knight', pageTitle: "The Dark Knight"});
 }
 export default Strings;

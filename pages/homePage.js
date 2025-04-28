@@ -13,21 +13,38 @@ class HomePage {
 
   // Actions performed on the Home page
 
+  /**
+   * Click on the Accept all cookies button
+   * @description This method clicks on the Accept all cookies button.
+   */
   async clickOnAcceptCookies() {
     console.log("Click on Accept all cookies");
     await this.acceptAllCookiesButton.click();
   }
 
+  /**
+   * Click on the Login button
+   * @description This method clicks on the Login button.
+   */
   async clickOnLoginButton() {
     console.log("Click on Login button");
     await this.loginButton.click();
   }
 
+  /**
+   * Click on the Google button
+   * @description This method clicks on the Google button.
+   */
   async clickOnGoogleButton() {
     console.log("Click on Google button");
     await this.googleButton.click();
   }
 
+  /**
+   * 
+   * @param {String} email 
+   * @param {String} password 
+   */
   async enterCredentials(email, password) {
     console.log(`Enter email: ${email}`);
     await this.emailInput.fill(email);
@@ -36,6 +53,10 @@ class HomePage {
     await this.passwordNextButton.click();
   }
 
+  /**
+   * Click on the Search button
+   * @description This method clicks on the Search button.
+   */
   async clickSearchButton() {
     console.log("Click on Search button");
     await this.searchButton.click();

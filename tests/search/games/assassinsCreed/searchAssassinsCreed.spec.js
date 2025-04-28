@@ -1,11 +1,11 @@
 import { test } from "@playwright/test";
-import HomePage from "../../../pages/homePage";
-import { prod } from "../../../data/url.json";
-import Constans from "../../../utils/constans";
-import SearchPage from "../../../pages/searchPage";
-import BasePage from "../../../pages/games/assassinsCreed/basePage";
-import UiUtils from "../../../utils/uiUtils";
-import Strings from "../../../utils/strings";
+import HomePage from "../../../../pages/homePage";
+import { prod } from "../../../../data/url.json";
+import Constans from "../../../../utils/constans";
+import SearchPage from "../../../../pages/searchPage";
+import BasePage from "../../../../pages/games/assassinsCreed/basePage";
+import UiUtils from "../../../../utils/uiUtils";
+import Strings from "../../../../utils/strings";
 
 
 async function testAssassinsCreedGamePage(page, gameName, gameTitle, gameUrl) {
@@ -22,8 +22,8 @@ async function testAssassinsCreedGamePage(page, gameName, gameTitle, gameUrl) {
 
   // Select the game for review
   await homePage.clickSearchButton();
-  await searchPage.enterGame(gameName);
-  await searchPage.selectGame(gameName);
+  await searchPage.searchInput(gameName);
+  await searchPage.selectInput(gameName);
 
   // Verify the game's page
   await page.waitForURL(`**${gameUrl}`);
