@@ -20,5 +20,6 @@ class Strings {
 
     // Movies
     static DARK_KNIGHT = new Strings ({default: 'Dark Knight', pageTitle: "The Dark Knight"});
+    static DARK_KNIGHT_REVIEW = new Strings ({default: 'Dark Knight Review', pageTitle: "The Dark Knight Review"});
 }
 export default Strings;

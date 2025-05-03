@@ -34,7 +34,7 @@ class UiUtils {
    * @param {String} expectedTitle 
    * * @description This method validates the game title on the page.
    */
-  static async validateGameTitle(title, expectedTitle) {
+  static async validateGenreTitle(title, expectedTitle) {
     console.log(`Validating the game ${title.textContent()}`);
     const actualTitle = await title.textContent();
 

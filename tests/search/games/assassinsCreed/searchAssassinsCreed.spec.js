@@ -3,7 +3,7 @@ import HomePage from "../../../../pages/homePage";
 import { prod } from "../../../../data/url.json";
 import Constans from "../../../../utils/constans";
 import SearchPage from "../../../../pages/searchPage";
-import BasePage from "../../../../pages/games/assassinsCreed/basePage";
+import BasePageGenres from "../../../../pages/genres/basePageGenres";
 import UiUtils from "../../../../utils/uiUtils";
 import Strings from "../../../../utils/strings";
 
@@ -11,7 +11,7 @@ import Strings from "../../../../utils/strings";
 async function testAssassinsCreedGamePage(page, gameName, gameTitle, gameUrl) {
   const homePage = new HomePage(page);
   const searchPage = new SearchPage(page);
-  const basePage = new BasePage(page);
+  const basePageGenres = new BasePageGenres(page);
 
   // Navigate to IGN website
   await UiUtils.goToUrl(homePage.page, prod.ign_uk.baseUrl);
@@ -27,8 +27,8 @@ async function testAssassinsCreedGamePage(page, gameName, gameTitle, gameUrl) {
 
   // Verify the game's page
   await page.waitForURL(`**${gameUrl}`);
-  await UiUtils.validatePageUrlContains(basePage.page, gameUrl);
-  await UiUtils.validateGameTitle(basePage.gameTitle, gameTitle);
+  await UiUtils.validatePageUrlContains(basePageGenres.page, gameUrl);
+  await UiUtils.validateGenreTitle(basePageGenres.genreTitle, gameTitle);
 }
 
 test.describe("Select games based on the game's title", () => {
